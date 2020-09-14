@@ -48,9 +48,8 @@ class UserProfile(models.Model):
         return self.user.username
 
 class Interest(models.Model):
-    
+    id = models.BigIntegerField(primary_key = True)
     interest_name = models.CharField(max_length=30)
-    #interest_id = models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.interest_name
