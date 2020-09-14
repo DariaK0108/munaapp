@@ -34,7 +34,7 @@ INTEREST_CHOICES = (
 # Create your models here.
 
 class UserProfile(models.Model):
-    
+    id = models.BigIntegerField(primary_key = True)
     #user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE, related_name='profile',default='0')
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     email = models.EmailField(null=True)
