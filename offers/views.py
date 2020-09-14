@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 from .models import Offer_electronics_item, Offer_sports_item, Offer_clothes_item, Offer_hygiene_item
 from accounts.models import UserProfile
 
 # Create your views here.
+@login_required
 def electronics_list(request):
     electronics_items = Offer_electronics_item.objects.all().order_by("product")
     return render(request, 'electronics.html', {'offers_electronics': electronics_items})
@@ -12,19 +15,22 @@ def electronics_list(request):
 #    offer.delete()
 #    return redirect('electronics_list')
 
+@login_required
 def hygiene_list(request):
     hygiene_items = Offer_hygiene_item.objects.all().order_by("product")
     return render(request, 'hygiene.html', {'offers_hygiene': hygiene_items})
 
+@login_required
 def clothes_list(request):
     clothes_items = Offer_clothes_item.objects.all().order_by("product")
     return render(request, 'clothes.html', {'offers_clothes': clothes_items})
 
+@login_required
 def sports_list(request):
     sports_items = Offer_sports_item.objects.all().order_by("product")
     return render(request, 'sports.html', {'offers_sports': sports_items})
 
-
+@login_required
 def offer_list(request):
     profile = UserProfile.objects.get(user=request.user)
     list_interests = list(profile.interests.values_list('interest_name', flat=True))

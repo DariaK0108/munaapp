@@ -1,0 +1,6 @@
+python manage.py makemigrations
+python manage.py migrate
+git add .
+git commit -m "Updating"
+git push origin master
+git push heroku master
