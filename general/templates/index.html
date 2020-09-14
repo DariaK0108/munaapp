@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Welcome to Muna App!</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <img src="{% static './general/images/adam-winger-b1wqPO2qKUY-unsplash.jpg' %}" alt="gift cards" class="rounded-lg shadow-sm" width="307" height="204">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static './general/images/jess-bailey-f94JPVrDbnY-unsplash.jpg' %}" alt="gift box" class="rounded-lg shadow-sm" width="307" height="204">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static './general/images/le-buzz-Z44o7s8YkB0-unsplash.jpg' %}" alt="mobile phone" class="rounded-lg shadow-sm" width="307" height="204">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-10 offset-md-1">
+                <center><p class="h1 text-primary">Best deals in exchange for your data!</p></center>
+                <center><p class="h2 mt-3">Exchange your data for discounts, gift cards or cash.</p></center>
+                <center><p class="h5">Change or delete your data anytime.</p></center>
+                <center><a href="{% url 'userprofile' %}"><button type="button" class="btn btn-primary btn-lg mt-3 shadow">Get started!</button></a></center>
+            </div>
+            
+        </div>
+    </div>  
+{% endblock content %}
+

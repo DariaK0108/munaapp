@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Logged out - Muna App</title>
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container">
+        <!-- <h1>{{ about_text }}</h1> -->
+        <center><p class="h2 text-primary mt-5">Logged out of Muna App. Thank you for using!</p></center>
+        
+        <br>
+        <center class="mt-5">
+            <img src="{% static './general/images/pexels-tim-mossholder-3612885.jpg' %}" alt="smiley balloons" class="rounded-lg shadow-sm" width="307" height="204">            
+        </center>
+    </div>  
+{% endblock content %}

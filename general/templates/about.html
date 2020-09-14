@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>About</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <!-- <h1>{{ about_text }}</h1> -->
+        <center><p class="h2 text-primary mt-5">Welcome to the initial version of the Muna App!</p></center>
+        <br>
+        
+        <div class="row mt-4">
+            <div class="col-5 offset-md-1">
+                <img src="{% static './general/images/ahmed-zayan-ABUWC-0a7_A-unsplash.jpg' %}" alt="smiley" class="rounded-lg shadow-sm" width="307" height="204">
+            </div>
+            <div class="col-5">             
+                
+                <center><p class="h3">Here, you can:</p></center>
+                <br>
+                <center>
+                    <p>Create your account</p>
+                    <p>Add, edit or delete your data</p>
+                    <p>Choose product categories that you would be interested in</p>
+                    <p>Get recommendations based on your data</p>
+                
+                </center>
+            </div>
+            
+        </div>
+
+    </div>  
+{% endblock content %}
+

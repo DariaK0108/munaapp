@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+  <div class="container" style="margin-top: 100px">
+    <div class="card-deck">
+      {% for i in list_interests %}
+      
+          {% if i == "ELE" %}
+          <div class="card">
+            <img src="{% static './offers/images/electronics.jpg' %}" height="300" class="card-img-top" alt="electronics">
+            <div class="card-body">
+                <h5 class="card-title">
+                  <a class="nav-link" href="{% url 'electronics_list' %}">Electronics</a> 
+                </h5>
+                <p class="card-text">See our offers for electronics!</p>
+            </div>
+          </div>
+          {% endif %}
+          {% if i == "HYG" %}
+          <div class="card">
+            <img src="{% static 'offers/images/hygiene.jpg' %}" height="300" class="card-img-top" alt="hygiene">
+            <div class="card-body">
+                <h5 class="card-title">
+                  <a class="nav-link" href="{% url 'hygiene_list' %}">Hygiene</a> 
+                </h5>
+                <p class="card-text">See our offers for hygiene!</p>
+            </div>
+          </div>
+          {% endif %}
+          {% if i == "SPO" %}
+          <div class="card">
+            <img src="{% static 'offers/images/sports.jpg' %}" height="300" class="card-img-top" alt="sports">
+            <div class="card-body">
+                <h5 class="card-title">
+                  <a class="nav-link" href="{% url 'sports_list' %}">Sports</a> 
+                </h5>
+                <p class="card-text">See our offers for sports!</p>
+            </div>
+          </div>
+          {% endif %}
+          {% if i == "CLO" %}
+          <div class="card">
+            <img src="{% static './offers/images/clothing.jpg' %}" height="300" class="card-img-top" alt="clothes">
+            <div class="card-body">
+                <h5 class="card-title">
+                  <a class="nav-link" href="{% url 'clothes_list' %}">Clothes</a> 
+                </h5>
+                <p class="card-text">See our offers for clothes!</p>
+            </div>
+          </div>
+          {% endif %}
+                
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+<!--
+<div style="margin-top: 100px">  
+  <h1 class="text-center">Offers:</h1>
+  {% for offer in offers %}
+  <div class="container">
+    <h1><a href="#">{{ offer.code }}</a></h1>
+    {{ offer.brand }}<br>
+    {{ offer.product }}<br>
+    {{ offer.product_model }}<br>
+    {{ offer.short_description }}<br><br><br>
+  </div>
+  {% endfor %}
+</div>
+-->
+
+
+
+{% endblock %}

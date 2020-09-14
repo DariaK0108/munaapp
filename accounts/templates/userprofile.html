@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <center><p class="h2 text-primary mt-2">Change/add user data:</p></center>
+        <div class="row justify-content-md-center">
+                <form action="{% url 'userprofile' %}" method="post">
+
+                        {% csrf_token %}
+                        
+                        {{ form|crispy }}
+
+                        <!-- Your username: {{ form.username }} -->
+                        <!-- 
+                        Email: {{ form.email }}<br> 
+                        Age:   {{ form.age }}<br>
+                        
+                        
+                        <input type="email" class="form-control col-lg-3" placeholder="Email">
+                        <input type="number" class="form-control col-lg-3" >
+                        <input type="text" class="form-control col-lg-3" >
+                        Gender: {{ form.gender }}<br>
+                        Education: {{ form.education }}<br>
+                        Interests: {{ form.interests }}<br>
+                        -->
+                        <input type="submit" value="Save">
+                </form>
+        </div>
+        <br>
+
+       
+        <!-- 
+        <center><p class="h2 text-primary mt-5">Change/add your interests:</p></center>
+        
+
+        <form action="{% url 'userprofile' %}" method="post">
+                {% csrf_token %}                
+                Interests: {{ form.interests }}<br>
+                
+                <input type="submit" value="Save">
+        </form>
+        -->
+</div>
+{% endblock %}
